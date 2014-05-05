@@ -1,0 +1,20 @@
+{
+  "name": "robinboehm.colorpicker",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.2.6"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.2.6"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src",
+    "test",
+    "tests",
+    "Gulpfile.js",
+    "package.json"
+  ]
+}
