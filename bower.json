@@ -1,6 +1,6 @@
 {
   "name": "robinboehm.colorpicker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "angular": "^1.2.6"
   },
@@ -15,6 +15,7 @@
     "test",
     "tests",
     "Gulpfile.js",
-    "package.json"
+    "package.json",
+    "backend"
   ]
 }
