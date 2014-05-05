@@ -1,6 +1,6 @@
 {
   "name": "angular-talkstrap",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "scripts": {
     "test": "gulp test"
   },
@@ -24,7 +24,7 @@
     "karma": "^0.12.3"
   },
   "devDependencies": {
-    "gulp": "~3.2.2",
+    "gulp": "~3.5.0",
     "gulp-clean": "~0.2.4",
     "gulp-concat": "^2.2.0",
     "gulp-filter": "~0.3.1",

@@ -40,21 +40,36 @@ angular.module('robinboehm.colorpicker').directive('colorpicker', [
   }
 ]);
 'use strict';
-angular.module('robinboehm.colorpicker').factory('colorpickerData', [
-  '$http',
-  function ($http) {
-    var serverUrl = 'http://localhost:2403/', resourceUrl = 'colors';
-    // Private Service Impl
-    function getColors() {
-      return $http.get(serverUrl + resourceUrl);
+angular.module('robinboehm.colorpicker').provider('colorpickerData', function () {
+  // Defaults
+  var serverUrl = 'http://localhost:2403/', resourceUrl = 'colors';
+  this.serverUrl = function (serverUrlParam) {
+    if (arguments.length > 0) {
+      serverUrl = serverUrlParam;
     }
-    function saveColors(color) {
-      return $http.post(serverUrl + resourceUrl, color);
+    return serverUrl;
+  };
+  this.resourceUrl = function (resourceUrlParam) {
+    if (arguments.length > 0) {
+      resourceUrl = resourceUrlParam;
     }
-    // Public API
-    return {
-      getColors: getColors,
-      saveColors: saveColors
-    };
-  }
-]);
+    return resourceUrl;
+  };
+  this.$get = [
+    '$http',
+    function ($http) {
+      // Private Service Impl
+      function getColors() {
+        return $http.get(serverUrl + resourceUrl);
+      }
+      function saveColors(color) {
+        return $http.post(serverUrl + resourceUrl, color);
+      }
+      // Public API
+      return {
+        getColors: getColors,
+        saveColors: saveColors
+      };
+    }
+  ];
+});

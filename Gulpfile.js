@@ -5,8 +5,7 @@ var gulp = require('gulp'),
   ngmin = require('gulp-ngmin'),
   concat = require('gulp-concat'),
   ngHtml2Js = require('gulp-ng-html2js'),
-  minifyHtml = require('gulp-minify-html'),
-  removeUseStrict = require("gulp-remove-use-strict");
+  minifyHtml = require('gulp-minify-html');
 
 
 var componentName = require('./bower.json').name;
@@ -32,7 +31,6 @@ gulp.task('scripts', [], function () {
     .pipe(concat(componentName + '.js'))
     .pipe(gulp.dest(paths.dist))
     .pipe(uglify())
-    .pipe(removeUseStrict())
     .pipe(concat(componentName + '.min.js'))
     .pipe(gulp.dest(paths.dist));
 
