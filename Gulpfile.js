@@ -15,7 +15,7 @@ var paths = {
 
 // Clean public
 gulp.task('clean', function () {
-  return gulp.src(paths.dist + componentName + '*.js', {read: false})
+  return gulp.src(paths.dist + componentName + '*.{js,css}', {read: false})
     .pipe(clean());
 });
 
@@ -39,10 +39,10 @@ gulp.task('scripts', [], function () {
 gulp.task('styles', [], function () {
 
   return gulp.src('src/styles/**/*.css')
-    .pipe(concat('css/styles.css'))
+    .pipe(concat(componentName + '.css'))
     .pipe(gulp.dest(paths.dist))
     .pipe(minifyCss())
-    .pipe(concat('css/styles.min.css'))
+    .pipe(concat(componentName + '.min.css'))
     .pipe(gulp.dest(paths.dist));
 
 });
@@ -56,7 +56,7 @@ gulp.task('templates', [], function () {
       quotes: true
     }))
     .pipe(ngHtml2Js({
-      moduleName: 'templates',
+      moduleName: componentName,
       prefix: 'views/'
     }))
     .pipe(concat(componentName + '.templates.js'))
