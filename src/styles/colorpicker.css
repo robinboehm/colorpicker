@@ -1,0 +1,11 @@
+colorpicker .color {
+    float: left;
+    list-style-type: none;
+    width: 50px;
+    height: 50px;
+}
+
+colorpicker .preview{
+    width: 400px;
+    height: 100px;
+}

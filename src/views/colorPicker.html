@@ -4,30 +4,19 @@
 <input type="range" min="0" max="1.0" step="0.01" ng-model="a"/>
 
 
-<div style="width: 400px;
-            height: 100px;
-            background-color: rgba({{r}},{{g}},{{b}},{{a}});"></div>
+<div class="preview" style="background-color: rgba({{r}},{{g}},{{b}},{{a}});"></div>
 
 <button ng-click="save(r,g,b,a)">Save Color!</button>
 
-<style>
-  div.color {
-    float: left;
-    list-style-type: none;
-    width: 50px;
-    height: 50px;
-  }
-</style>
-
-<section>
-  <h3>Saved Colors</h3>
-
-  <div ng-repeat="color in colors"
-       class="color"
-       style="background-color: rgba({{color.r}},{{color.g}},{{color.b}},{{color.a}});"
-       ng-click="setColor(color)">
-  </div>
-</section>
+<p>
+<h3>Saved Colors</h3>
+<div ng-repeat="color in colors"
+     class="color"
+     style="background-color: rgba({{color.r}},{{color.g}},{{color.b}},{{color.a}});"
+     ng-click="setColor(color)">
+</div>
+<div style="clear: both"></div>
+</p>
 
 
 
