@@ -16,8 +16,8 @@ describe('A colorpicker', function () {
     var response = [
       {r: 100, g: 200, b: 50, a: 1}
     ];
-    $httpBackend.whenGET(/[*]*/).respond(response);
-    $httpBackend.whenPOST(/[*]*/).respond(response);
+    $httpBackend.whenGET(/[*]colors/).respond(response);
+    $httpBackend.whenPOST(/[*]colors/).respond(response);
   });
 
   it('should render a colorpicker', function () {
